@@ -903,10 +903,9 @@
                 line-height: 1.8; letter-spacing: 0.02em;">
         お気軽にお問い合わせください
       </p>
-      <form class="reveal" action="https://api.web3forms.com/submit" method="POST" style="display: grid; gap: 1.25rem; max-width: 640px; margin: 0 auto;">
-        <input type="hidden" name="access_key" value="80208ead-0118-4d4e-a7ef-5b36932708fb">
-        <input type="hidden" name="subject" value="STANDX コーポレートサイトからのお問い合わせ">
-        <input type="hidden" name="from_name" value="STANDX Contact Form">
+      <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: grid; gap: 1.25rem; max-width: 640px; margin: 0 auto;">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display: none;"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
             <div>
