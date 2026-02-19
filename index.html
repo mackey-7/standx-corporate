@@ -19,7 +19,11 @@
        ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -36,13 +40,14 @@
 
     section {
       width: 100%;
+      overflow: hidden;
     }
 
     .font-inter { font-family: 'Inter', sans-serif; }
     .font-mono  { font-family: 'JetBrains Mono', monospace; }
 
     ::selection { background: rgba(99, 102, 241, 0.15); color: inherit; }
-    html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+    html { scroll-behavior: smooth; }
 
     /* ============================================================
        HERO
@@ -107,6 +112,7 @@
       transform: translateY(40px);
       transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
                   transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
     .reveal.is-visible {
       opacity: 1;
@@ -388,7 +394,7 @@
   <!-- =====================================================================
        HEADER — Logo top-left
        ===================================================================== -->
-  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 0.875rem 1.5rem; background: #ffffff; display: flex; justify-content: center;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 0.875rem 1.5rem; background: #ffffff; display: flex; justify-content: center; -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden;">
     <img src="STANDX_logo_FIX.png" alt="STANDX" style="width: clamp(120px, 12vw, 160px); height: auto; object-fit: contain;">
   </header>
 
@@ -398,7 +404,7 @@
   <section class="hero-section">
     <div class="hero-bg" aria-hidden="true">
       <img
-        src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1920&q=80"
+        src="images/hero-shibuya.jpg"
         alt=""
         fetchpriority="high"
         style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1);"
@@ -408,8 +414,8 @@
 
     <div class="hero-content" style="text-align: center; padding: 0 1.5rem;">
       <h1 class="hero-fade hero-fade-1 font-inter"
-          style="font-weight: 900; font-size: clamp(1.75rem, 4.5vw, 3.25rem);
-                 line-height: 1.2; color: #ffffff; letter-spacing: -0.01em;
+          style="font-weight: 900; font-size: clamp(2.25rem, 6vw, 4rem);
+                 line-height: 1.15; color: #ffffff; letter-spacing: -0.02em;
                  margin-bottom: 1rem;">
         AI × Human. Business in Motion.
       </h1>
@@ -466,7 +472,7 @@
       <!-- Section header -->
       <div class="mb-16 md:mb-24 text-center">
         <h2 class="reveal font-inter font-black"
-            style="font-size: clamp(3rem, 7vw, 5rem); line-height: 1.08;
+            style="font-size: clamp(2.5rem, 5.5vw, 3.5rem); line-height: 1.08;
                    color: #0A0A0F; letter-spacing: -0.03em;">
           Agent Division
         </h2>
@@ -479,8 +485,8 @@
            style="font-size: 1rem; color: #1F2937; line-height: 2.0;
                   max-width: 580px; margin: 0 auto; letter-spacing: 0.01em;">
           STANDXには、AIエージェントだけで構成されたチームが存在します。<br>
-          マーケティング、LP制作、事業企画、クリエイティブ——<br>
-          役割を持ち、議論し、成果物を出す。<br>
+          マーケティング、LP制作、事業企画、ダッシュボード開発——<br>
+          お客様の課題に合わせてチームを編成し、成果物を出す。<br>
           24時間稼働する、もうひとつの組織です。
         </p>
       </div>
@@ -709,16 +715,22 @@
 
       </div>
 
-      <!-- Case Study -->
+      <!-- Case Studies -->
       <div class="reveal" style="border-top: 1px solid #e5e7eb; padding-top: 3rem; margin-top: 4rem;">
-        <p class="font-inter font-bold text-center" style="font-size: 0.8125rem; color: #1F2937; letter-spacing: 0.08em; margin: 0 0 0.75rem;">Case: 当コーポレートサイト</p>
+
+        <p class="font-inter font-bold uppercase text-center"
+           style="font-size: 0.6875rem; color: #1F2937; letter-spacing: 0.16em; margin-bottom: 2.5rem;">
+          Case Studies
+        </p>
+
+        <p class="font-inter font-bold text-center" style="font-size: 0.8125rem; color: #1F2937; letter-spacing: 0.08em; margin: 0 0 0.75rem;">01: 当コーポレートサイト</p>
         <p class="text-center" style="font-size: 0.9375rem; color: #1F2937; line-height: 2.0; max-width: 600px; margin: 0 auto 2.5rem;">
           当コーポレートサイトは、代表取締役がLanding PageチームのLeaderに直接指示。Leaderが構成とコピーを設計し、Coderが実装し、Criticが品質をレビュー。基準を満たすまで何度も差し戻す——このフィードバックループで完成した成果物です。
         </p>
         <!-- Flow diagram -->
         <div style="display: flex; justify-content: center;">
           <svg style="width: 100%; max-width: 640px;" viewBox="0 0 640 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- 代表取締役 (outside group) -->
+            <!-- 代表取締役 -->
             <rect x="0" y="24" width="100" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
             <text x="50" y="44" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="600" font-family="Inter">代表取締役</text>
             <text x="50" y="58" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">指示</text>
@@ -746,7 +758,7 @@
             <line x1="236" y1="46" x2="274" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case-arrow)"/>
             <line x1="358" y1="46" x2="396" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case-arrow)"/>
 
-            <!-- Feedback loop (Critic → Leader) -->
+            <!-- Feedback loop -->
             <path d="M438 68 L438 78 L194 78 L194 68" stroke="#6366F1" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#case-arrow-accent)"/>
 
             <!-- Arrow to 完成 -->
@@ -766,6 +778,140 @@
             </defs>
           </svg>
         </div>
+
+        <!-- Case 02 -->
+        <div style="margin-top: 4rem;">
+          <p class="font-inter font-bold text-center" style="font-size: 0.8125rem; color: #1F2937; letter-spacing: 0.08em; margin: 0 0 0.75rem;">02: 某D2Cブランド 経営ダッシュボード開発</p>
+          <p class="text-center" style="font-size: 0.9375rem; color: #1F2937; line-height: 2.0; max-width: 600px; margin: 0 auto 2.5rem;">
+            D2Cブランドを展開するクライアントからの依頼で、経営指標をリアルタイムに可視化するダッシュボードを構築。SaaS Builderチームが設計から実装まで全工程をAIのみで担当し、わずか3日で完成させた。
+          </p>
+          <!-- Flow diagram -->
+          <div style="display: flex; justify-content: center;">
+            <svg style="width: 100%; max-width: 720px;" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- クライアント -->
+              <rect x="0" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="40" y="42" text-anchor="middle" fill="#0A0A0F" font-size="9" font-weight="600" font-family="Noto Sans JP">クライアント</text>
+              <text x="40" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">依頼</text>
+
+              <!-- Arrow -->
+              <line x1="80" y1="46" x2="104" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case2-arrow)"/>
+
+              <!-- 代表取締役 -->
+              <rect x="108" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="148" y="42" text-anchor="middle" fill="#0A0A0F" font-size="9" font-weight="600" font-family="Noto Sans JP">代表取締役</text>
+              <text x="148" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">指揮</text>
+
+              <!-- Arrow -->
+              <line x1="188" y1="46" x2="216" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case2-arrow)"/>
+
+              <!-- SaaS Builder team group -->
+              <rect x="220" y="0" width="330" height="88" rx="8" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="5 4"/>
+              <text x="385" y="14" text-anchor="middle" fill="#1F2937" font-size="9" font-weight="600" font-family="Inter" letter-spacing="0.06em">SaaS Builder Team</text>
+
+              <rect x="232" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="272" y="44" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="600" font-family="Inter">Leader</text>
+              <text x="272" y="58" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">設計</text>
+
+              <rect x="344" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="384" y="44" text-anchor="middle" fill="#0A0A0F" font-size="9.5" font-weight="600" font-family="Inter">Workers</text>
+              <text x="384" y="58" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">Front / Back</text>
+
+              <rect x="456" y="24" width="80" height="44" rx="6" fill="rgba(99,102,241,0.04)" stroke="#6366F1" stroke-width="1.5"/>
+              <text x="496" y="44" text-anchor="middle" fill="#6366F1" font-size="10" font-weight="600" font-family="Inter">Reviewer</text>
+              <text x="496" y="58" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">検証</text>
+
+              <!-- Arrows inside group -->
+              <line x1="312" y1="46" x2="344" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case2-arrow)"/>
+              <line x1="424" y1="46" x2="456" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case2-arrow)"/>
+
+              <!-- Feedback loop -->
+              <path d="M496 68 L496 78 L272 78 L272 68" stroke="#6366F1" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#case2-arrow-accent)"/>
+
+              <!-- Arrow to 納品 -->
+              <line x1="550" y1="46" x2="578" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case2-arrow)"/>
+
+              <!-- 納品 -->
+              <rect x="582" y="20" width="130" height="52" rx="6" fill="#0A0A0F" stroke="#0A0A0F" stroke-width="1.5"/>
+              <text x="647" y="42" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Noto Sans JP">3日で納品</text>
+              <text x="647" y="58" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="Noto Sans JP">設計〜実装〜検証</text>
+
+              <defs>
+                <marker id="case2-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 L8 4 L0 8 Z" fill="#d1d5db"/>
+                </marker>
+                <marker id="case2-arrow-accent" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 L8 4 L0 8 Z" fill="#6366F1"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Case 03 -->
+        <div style="margin-top: 4rem;">
+          <p class="font-inter font-bold text-center" style="font-size: 0.8125rem; color: #1F2937; letter-spacing: 0.08em; margin: 0 0 0.75rem;">03: 某飲食チェーン 採用SNS施策</p>
+          <p class="text-center" style="font-size: 0.9375rem; color: #1F2937; line-height: 2.0; max-width: 600px; margin: 0 auto 2.5rem;">
+            採用難に悩む飲食チェーンからの依頼。採用マーケティング戦略の立案、ショート動画の企画・制作、SNS運用まで、3部門が連携。依頼から5日で運用を開始。
+          </p>
+          <!-- Flow diagram -->
+          <div style="display: flex; justify-content: center;">
+            <svg style="width: 100%; max-width: 720px;" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- クライアント -->
+              <rect x="0" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="40" y="42" text-anchor="middle" fill="#0A0A0F" font-size="9" font-weight="600" font-family="Noto Sans JP">クライアント</text>
+              <text x="40" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">依頼</text>
+
+              <!-- Arrow -->
+              <line x1="80" y1="46" x2="104" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case3-arrow)"/>
+
+              <!-- 代表取締役 -->
+              <rect x="108" y="24" width="80" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="148" y="42" text-anchor="middle" fill="#0A0A0F" font-size="9" font-weight="600" font-family="Noto Sans JP">代表取締役</text>
+              <text x="148" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">指揮</text>
+
+              <!-- Arrow -->
+              <line x1="188" y1="46" x2="216" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case3-arrow)"/>
+
+              <!-- 3部門連携グループ -->
+              <rect x="220" y="0" width="340" height="88" rx="8" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="5 4"/>
+              <text x="390" y="14" text-anchor="middle" fill="#1F2937" font-size="9" font-weight="600" font-family="Inter" letter-spacing="0.06em">Cross-Department</text>
+
+              <rect x="234" y="24" width="88" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="278" y="42" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="600" font-family="Inter">Marketing</text>
+              <text x="278" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">採用戦略</text>
+
+              <rect x="348" y="24" width="88" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="392" y="42" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="600" font-family="Inter">Creative</text>
+              <text x="392" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">動画企画・制作</text>
+
+              <rect x="462" y="24" width="88" height="44" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+              <text x="506" y="42" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="600" font-family="Inter">SNS</text>
+              <text x="506" y="56" text-anchor="middle" fill="#1F2937" font-size="8" font-family="Noto Sans JP">コンテンツ運用</text>
+
+              <!-- Arrows inside group -->
+              <line x1="322" y1="46" x2="348" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case3-arrow)"/>
+              <line x1="436" y1="46" x2="462" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case3-arrow)"/>
+
+              <!-- Arrow to 納品 -->
+              <line x1="560" y1="46" x2="588" y2="46" stroke="#d1d5db" stroke-width="1.5" marker-end="url(#case3-arrow)"/>
+
+              <!-- 納品 -->
+              <rect x="592" y="20" width="120" height="52" rx="6" fill="#0A0A0F" stroke="#0A0A0F" stroke-width="1.5"/>
+              <text x="652" y="42" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Noto Sans JP">5日で運用開始</text>
+              <text x="652" y="58" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="Noto Sans JP">戦略〜動画〜SNS</text>
+
+              <defs>
+                <marker id="case3-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 L8 4 L0 8 Z" fill="#d1d5db"/>
+                </marker>
+                <marker id="case3-arrow-accent" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 L8 4 L0 8 Z" fill="#6366F1"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
       </div>
 
     </div><!-- /max-w-6xl -->
@@ -780,7 +926,7 @@
 
       <div class="text-center mb-16 md:mb-24">
         <h2 class="reveal font-inter font-black mb-5"
-            style="font-size: clamp(3rem, 7vw, 5rem); line-height: 1.08;
+            style="font-size: clamp(2.5rem, 5.5vw, 3.5rem); line-height: 1.08;
                    color: #ffffff; letter-spacing: -0.03em;">
           Expert Division
         </h2>
@@ -802,7 +948,7 @@
           <!-- Card 1: AI導入支援 -->
           <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
             <div style="aspect-ratio: 3/2; overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="AI導入支援" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
+              <img src="images/expert-ai.jpg" alt="AI導入支援" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
             </div>
             <div style="padding: 1.5rem;">
               <p class="font-inter font-black mb-3 grad-text" style="font-size: 0.8125rem; letter-spacing: 0.10em;">01</p>
@@ -816,7 +962,7 @@
           <!-- Card 2: SNSマーケティング -->
           <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
             <div style="aspect-ratio: 3/2; overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="SNSマーケティング" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
+              <img src="images/expert-sns.jpg" alt="SNSマーケティング" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
             </div>
             <div style="padding: 1.5rem;">
               <p class="font-inter font-black mb-3 grad-text" style="font-size: 0.8125rem; letter-spacing: 0.10em;">02</p>
@@ -830,7 +976,7 @@
           <!-- Card 3: セールスプロモーション -->
           <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
             <div style="aspect-ratio: 3/2; overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&q=80" alt="セールスプロモーション" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
+              <img src="images/expert-sales.jpg" alt="セールスプロモーション" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(1);">
             </div>
             <div style="padding: 1.5rem;">
               <p class="font-inter font-black mb-3 grad-text" style="font-size: 0.8125rem; letter-spacing: 0.10em;">03</p>
@@ -903,11 +1049,11 @@
                 line-height: 1.8; letter-spacing: 0.02em;">
         お気軽にお問い合わせください
       </p>
-      <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: grid; gap: 1.25rem; max-width: 640px; margin: 0 auto;">
+      <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" style="display: grid; gap: 1.25rem; max-width: 640px; margin: 0 auto;">
         <input type="hidden" name="form-name" value="contact">
         <p style="display: none;"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;" class="sm:grid-cols-2">
             <div>
               <label style="display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; letter-spacing: 0.02em;">お名前 <span style="color: #6366F1;">*</span></label>
               <input type="text" name="name" required style="width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: #ffffff; font-size: 0.9375rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
