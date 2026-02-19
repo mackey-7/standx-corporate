@@ -432,6 +432,7 @@
       background: #ffffff;
       display: flex;
       justify-content: center;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       -webkit-backface-visibility: hidden;
@@ -1654,9 +1655,10 @@
        FOOTER
        ===================================================================== -->
   <footer class="section-dark py-10 footer-border">
-    <p class="text-center font-inter footer-copy">
-      &copy; 2024 STANDX Inc.
-    </p>
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-inter footer-copy">&copy; 2025 STANDX Inc.</p>
+      <a href="/privacy.html" class="footer-copy" style="text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">プライバシーポリシー</a>
+    </div>
   </footer>
 
 
@@ -1712,6 +1714,18 @@
       });
 
     })();
+
+    // Double-submit prevention
+    var form = document.querySelector('form[data-netlify]');
+    if (form) {
+      form.addEventListener('submit', function () {
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = '送信中...';
+        }
+      });
+    }
   </script>
 
 </body>
