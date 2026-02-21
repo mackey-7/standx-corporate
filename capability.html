@@ -202,7 +202,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 1rem clamp(2rem, 5vw, 8rem);
       background: #fff;
       transition: box-shadow 0.3s ease;
       -webkit-transform: translateZ(0);
@@ -490,16 +490,42 @@
       line-height: 1.7;
       margin-top: 0.25rem;
     }
+    .cap-task-before::before {
+      content: '従来';
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #9CA3AF;
+      background: rgba(156, 163, 175, 0.12);
+      padding: 0.1rem 0.375rem;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+    }
 
     .cap-task-after {
       font-size: 0.9375rem;
       color: #1F2937;
       line-height: 1.7;
     }
+    .cap-task-after::before {
+      content: 'STANDX';
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #6366F1;
+      background: rgba(99, 102, 241, 0.08);
+      padding: 0.1rem 0.375rem;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+    }
 
     .cap-task-after-arrow {
-      color: #6366F1;
-      margin-right: 0.25rem;
+      display: none;
     }
 
     /* Tag desktop (right column) */
@@ -658,14 +684,14 @@
   <section class="section-warm" style="padding: 7rem 1.5rem 5rem;">
     <div style="max-width: 800px; margin: 0 auto; text-align: center; padding-top: 3.5rem;">
       <h1 class="reveal font-inter font-black section-h2-dark" style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.15; margin-bottom: 1.75rem;">
-        「仕事」は、8つの動詞で全部言える。
+        AIにはAIの、人には人の仕事がある。
       </h1>
       <p class="reveal section-body-dark" style="max-width: 800px; font-size: 1rem; line-height: 2.0; color: #1F2937;">
         書く、読む、調べる、計算する、整理する、作る、伝える、管理する。<br>
         ホワイトカラーが1日にやっていることは、突き詰めるとこれだけだ。<br>
-        STANDXは、そのすべてをカバーする。<br>
-        AIが得意な領域は<span class="grad-text" style="font-weight: 700;">Agent Division</span>が。<br>
-        人間にしかできない領域は<span style="font-weight: 700; color: #0A0A0F;">Expert Division</span>が。
+        私たちはこの8動詞で業務を再定義し、<br>
+        AIが得意な領域は<span class="grad-text" style="font-weight: 700;">Agent Division</span>が、<br>
+        人が必要な領域は<span style="font-weight: 700; color: #0A0A0F;">Expert Division</span>が担っている。
       </p>
     </div>
   </section>
@@ -677,7 +703,7 @@
   <section class="section-white" style="padding: 5rem 1.5rem 7rem;">
     <div style="max-width: 960px; margin: 0 auto;">
       <p class="reveal section-body-dark" style="text-align: center; margin-bottom: 3rem; max-width: 640px;">
-        以下、業務ごとにAgent DivisionとExpert Divisionの担当領域を仕分けます。御社の業務がどちらに当たるか、確認してみてください。
+        各カテゴリごとに、一般的な業務のやり方と、私たちの進め方を対比する。
       </p>
 
       <div class="cap-nav-grid" id="capNavGrid">
@@ -753,7 +779,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">ビジネスメール</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">敬語に悩み、1通15分</p>
           </div>
@@ -761,7 +787,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>要件だけ伝えれば文面が即完成。1通30秒</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -772,7 +798,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">報告書・日報</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">毎日30分かけてフォーマットに記入</p>
           </div>
@@ -780,7 +806,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>作業ログから自動生成。確認1分</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -791,7 +817,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">企画書・提案書</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">構成→リサーチ→スライド化。数日がかり</p>
           </div>
@@ -799,7 +825,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>要件から構成・調査・ドラフトまで一括。数日→数時間</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -810,7 +836,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">議事録</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">会議後に清書して共有。1時間</p>
           </div>
@@ -818,7 +844,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>録音から自動構造化。決定事項とアクションアイテム即抽出</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -829,7 +855,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">マーケティングコピー</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">ターゲット設計→トンマナ→A/B案。半日</p>
           </div>
@@ -837,7 +863,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>ブランドガイドに沿った広告文・SNS投稿・記事を一括生成</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -848,7 +874,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">ブランドメッセージ開発</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">企業の思想を言語化。ニュアンスの設計</p>
           </div>
@@ -856,7 +882,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>ヒアリングを重ね、人間の感性で言葉を選ぶ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -879,7 +905,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">メール処理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">1日42通。重要なものを探すのに時間がかかる</p>
           </div>
@@ -887,7 +913,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>優先度自動判定・要約。本当に読むべきメールだけに集中</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -898,7 +924,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">契約書レビュー</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">法務に回して数日待ち。見落としリスク</p>
           </div>
@@ -906,7 +932,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>リスク条項を即ハイライト。法務待ちゼロ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -917,7 +943,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">社内資料のレビュー</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">部下の資料を1つずつ確認。30分</p>
           </div>
@@ -925,7 +951,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>品質基準に照らした自動チェック。レビュー工数8割減</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -936,7 +962,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">校正・校閲</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">誤字脱字、表記ゆれを目視</p>
           </div>
@@ -944,7 +970,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>即座に検出。人間より高精度で品質安定</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -955,7 +981,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">意思決定のための読解</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">経営判断に関わる情報の取捨選択</p>
           </div>
@@ -963,7 +989,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>文脈と背景を踏まえた人間の判断が不可欠</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -986,7 +1012,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">市場・競合調査</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">Web検索→手動整理。数日〜1週間</p>
           </div>
@@ -994,7 +1020,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>公開情報を自動収集・構造化。数時間でレポート完成</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1005,7 +1031,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">社内情報の検索</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">「あの資料どこ？」でドライブを掘る</p>
           </div>
@@ -1013,7 +1039,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>自然言語で質問→即回答。探し物の時間ゼロ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1024,7 +1050,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">法規制・コンプライアンス調査</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">法改正を追い、影響を分析。専門知識が必要</p>
           </div>
@@ -1032,7 +1058,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>最新法規制を自動監視。対応漏れリスクを防止</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1043,7 +1069,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">企業リサーチ（商談前）</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">Webサイト・IR・ニュースを手動チェック。1時間</p>
           </div>
@@ -1051,7 +1077,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>企業名だけで概要・業績・ニュースをレポート化。1分</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1062,7 +1088,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">顧客の本音・課題の深掘り</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">数字に出ない不満、潜在ニーズの発見</p>
           </div>
@@ -1070,7 +1096,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>対話と観察から人間が洞察する領域</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1093,7 +1119,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">データ集計・レポーティング</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">Excelで毎週同じ関数を組む</p>
           </div>
@@ -1101,7 +1127,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>自動更新ダッシュボード。毎週の集計作業ゼロ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1112,7 +1138,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">予算・予実管理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">予算と実績をExcelで突合</p>
           </div>
@@ -1120,7 +1146,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>自動突合＋差異原因コメント付き。月末残業が消える</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1131,7 +1157,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">売上・需要予測</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">過去データを分析。属人的なカン頼み</p>
           </div>
@@ -1139,7 +1165,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>過去パターンから高精度予測。発注ミス・機会損失を防止</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1150,7 +1176,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">経費・請求計算</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">領収書→手入力→照合→承認</p>
           </div>
@@ -1158,7 +1184,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>画像認識で自動データ化。入力ミスと不正を防止</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1169,7 +1195,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">経営判断を伴う財務分析</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">投資判断、M&amp;A評価、事業撤退の意思決定</p>
           </div>
@@ -1177,7 +1203,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>数字の先にある戦略判断は、人間が下す</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1192,10 +1218,10 @@
   <section class="section-dark" style="padding: 4rem 1.5rem 6rem;">
     <div style="max-width: 640px; margin: 0 auto; text-align: center;">
       <p class="reveal section-lead-white" style="margin-bottom: 2rem; line-height: 1.8;">
-        ここまでで、御社の業務はいくつ当てはまりましたか？
+        私たちの考え方に共感いただけたら、お気軽にご連絡ください。
       </p>
       <div class="reveal">
-        <a href="/#contact" class="cta-button">まずは相談する</a>
+        <a href="/#contact" class="cta-button">お問い合わせ</a>
       </div>
     </div>
   </section>
@@ -1215,7 +1241,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">データ入力・転記</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">AシステムからBへコピペ。1日の大半</p>
           </div>
@@ -1223,7 +1249,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>API連携で完全自動化。転記コストゼロ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1234,7 +1260,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">ファイル・文書管理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">フォルダ構成→命名規則→手動整理</p>
           </div>
@@ -1242,7 +1268,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>自動分類・タグ付け。属人化を解消</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1253,7 +1279,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">フォーマット変換</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">PDF→Excel→PowerPoint、手作業で体裁調整</p>
           </div>
@@ -1261,7 +1287,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>指示一つで変換完了。手直し不要</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1272,7 +1298,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">名刺・顧客情報の登録</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">名刺を1枚ずつCRMに手入力</p>
           </div>
@@ -1280,7 +1306,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>画像認識で即データ化。顧客DBの精度も向上</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1291,7 +1317,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">業務プロセスの再設計</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">何を残し、何を捨て、何を自動化するかの判断</p>
           </div>
@@ -1299,7 +1325,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>現場を知る人間が設計する</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1322,7 +1348,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">プレゼン資料（パワポ）</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">構成→デザイン→図表→レビュー。丸1日</p>
           </div>
@@ -1330,7 +1356,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>要件から構成・デザイン・コピーまで一括。1日→1時間</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1341,7 +1367,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">バナー・チラシ制作</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">デザイナー発注→修正→入稿。1週間</p>
           </div>
@@ -1349,7 +1375,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>テキスト指示から複数案即生成。外注費と待ち時間カット</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1360,7 +1386,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">Webサイト・LP制作</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">企画→ワイヤー→デザイン→コーディング。数週間</p>
           </div>
@@ -1368,7 +1394,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>要件定義から実装まで一気通貫。数週間→数日</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1379,7 +1405,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">動画編集</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">カット→テロップ→BGM→書き出し。半日〜数日</p>
           </div>
@@ -1387,7 +1413,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>素材から自動編集。字幕・テロップも自動生成</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1398,7 +1424,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">ブランド体験の設計</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">ユーザーの感情に訴える体験設計、世界観の構築</p>
           </div>
@@ -1406,7 +1432,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>感性と文脈理解が求められる人間の仕事</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1429,7 +1455,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">会議の設定・運営</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">日程調整→予約→アジェンダ→議事録。1時間</p>
           </div>
@@ -1437,7 +1463,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>調整から議事録まで全自動。準備と後片付けゼロ</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1448,7 +1474,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">スケジュール調整</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">「〇日の△時はいかがでしょうか」を何往復も</p>
           </div>
@@ -1456,7 +1482,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>カレンダーから候補自動提示。確定まで介入不要</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1467,7 +1493,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">問い合わせ対応</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">同じ質問に何度も回答</p>
           </div>
@@ -1475,7 +1501,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>即時自動回答。対応コスト削減と顧客満足度を両立</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1486,7 +1512,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">社内フォローアップ</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">「進捗いかがですか」を手動で送る</p>
           </div>
@@ -1494,7 +1520,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>期限に応じた自動リマインド</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1505,7 +1531,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">商談・プレゼン</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">顧客との対面提案、信頼構築</p>
           </div>
@@ -1513,7 +1539,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>空気を読み、関係を築く。人間の仕事</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1524,7 +1550,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">採用面接</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">候補者の人柄・カルチャーフィット判断</p>
           </div>
@@ -1532,7 +1558,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>人が人を見極める。代替不可</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1555,7 +1581,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">タスク・プロジェクト管理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">JIRA/Asanaを手動更新。ステータス会議の準備</p>
           </div>
@@ -1563,7 +1589,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>自動トラッキング＋遅延予測。「管理のための管理」が消える</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1574,7 +1600,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">承認・ワークフロー</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">稟議→回覧→押印。1週間</p>
           </div>
@@ -1582,7 +1608,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>異常検知付き自動承認。例外だけ人間が判断</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1593,7 +1619,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">勤怠・給与管理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">出退勤集計→給与計算→振込データ</p>
           </div>
@@ -1601,7 +1627,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>打刻から給与計算まで完全自動</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1612,7 +1638,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">備品・発注管理</p>
-            <span class="cap-tag cap-tag-agent cap-tag-mobile">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent cap-tag-mobile" style="text-decoration: none;">Agent Division</a>
             </div>
             <p class="cap-task-before">在庫確認→発注→納品確認</p>
           </div>
@@ -1620,7 +1646,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow">→</span>在庫閾値で自動発注。欠品と発注業務を同時解消</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-agent">Agent Division</span>
+            <a href="/#agent-division" class="cap-tag cap-tag-agent" style="text-decoration: none;">Agent Division</a>
           </div>
         </div>
       </div>
@@ -1631,7 +1657,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">チームビルディング</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">メンバーの動機付け、コンフリクト解決、文化醸成</p>
           </div>
@@ -1639,7 +1665,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>人間が人間に向き合う領域</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1650,7 +1676,7 @@
           <div>
             <div class="cap-task-name-row">
             <p class="cap-task-name">経営判断</p>
-            <span class="cap-tag cap-tag-expert cap-tag-mobile">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert cap-tag-mobile" style="text-decoration: none;">Expert Division</a>
             </div>
             <p class="cap-task-before">事業の方向性、リスクテイク、撤退の決断</p>
           </div>
@@ -1658,7 +1684,7 @@
             <p class="cap-task-after"><span class="cap-task-after-arrow" style="color: #1F2937;">→</span>最終的な意思決定は、人間にしかできない</p>
           </div>
           <div class="cap-tag-desktop">
-            <span class="cap-tag cap-tag-expert">Expert Division</span>
+            <a href="/#expert-division" class="cap-tag cap-tag-expert" style="text-decoration: none;">Expert Division</a>
           </div>
         </div>
       </div>
@@ -1694,7 +1720,7 @@
       </div>
 
       <p class="reveal section-body-dark" style="margin-top: 2.5rem; max-width: 640px;">
-        ホワイトカラーの仕事を分解すると、約4分の3はAIエージェントが遂行できる段階にある。残り4分の1——商談、意思決定、チームビルディング、ブランド設計——は、人間にしかできない。STANDXは、その両方を持っている。
+        ホワイトカラーの仕事を分解すると、約4分の3はAIエージェントで遂行できる段階にある。残り4分の1——商談、意思決定、チームビルディング、ブランド設計——は、人にしかできない。この両輪で、私たちは仕事の全領域をカバーしている。
       </p>
 
     </div>
@@ -1712,7 +1738,7 @@
       </h2>
 
       <p class="reveal section-body-dark" style="max-width: 640px; margin-bottom: 0;">
-        STANDXのAgent Divisionは、15の専門部門・53のAIエージェントで構成された自律型組織です。リサーチ、企画、LP制作、レポート執筆、動画制作——上記のAgent Division担当業務を、実際に日常的に遂行しています。
+        STANDXのAgent Divisionは、15の専門部門・53のAIエージェントで構成されている。リサーチ、企画、LP制作、レポート執筆、動画制作——ここに挙げたAgent Division担当業務を、私たち自身が日常的に回している。
       </p>
 
       <div class="cap-proof-grid">
@@ -1748,11 +1774,11 @@
     <div style="max-width: 640px; margin: 0 auto; text-align: center;">
 
       <h2 class="reveal font-inter font-black section-h2-contact" style="font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 1.5rem;">
-        御社の業務、どこから任せますか？
+        興味を持ったら、話しましょう。
       </h2>
 
       <p class="reveal section-body-white" style="margin-bottom: 2.5rem;">
-        まずは業務内容をお聞かせください。Agent DivisionとExpert Division、どの領域からお任せいただくべきか、具体的にご提案します。
+        私たちの仕事の進め方について、もう少し詳しく知りたい方はお気軽にどうぞ。
       </p>
 
       <div class="reveal">
