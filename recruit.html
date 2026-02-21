@@ -475,6 +475,9 @@
               <li>AI活用に興味がある方</li>
               <li>成果にコミットできる方</li>
             </ul>
+            <a href="#apply" class="apply-btn" data-position="セールス担当" style="display: inline-block; background: #0A0A0F; color: #fff; font-weight: 700; font-size: 0.875rem; padding: 0.75rem 2rem; border-radius: 4px; text-decoration: none; letter-spacing: 0.03em; transition: background 0.2s, transform 0.18s;" onmouseover="this.style.background='#1a1a2e'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0A0A0F'; this.style.transform='translateY(0)'">
+              この職種に応募する →
+            </a>
           </div>
         </div>
 
@@ -499,6 +502,9 @@
               <li>トレンドへの感度が高い方</li>
               <li>データを見て改善できる方</li>
             </ul>
+            <a href="#apply" class="apply-btn" data-position="SNS運用担当" style="display: inline-block; background: #0A0A0F; color: #fff; font-weight: 700; font-size: 0.875rem; padding: 0.75rem 2rem; border-radius: 4px; text-decoration: none; letter-spacing: 0.03em; transition: background 0.2s, transform 0.18s;" onmouseover="this.style.background='#1a1a2e'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0A0A0F'; this.style.transform='translateY(0)'">
+              この職種に応募する →
+            </a>
           </div>
         </div>
 
@@ -509,23 +515,59 @@
 
 
   <!-- =====================================================================
-       CTA — Dark
+       APPLICATION FORM — Dark
        ===================================================================== -->
-  <section class="section-dark py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+  <section id="apply" class="section-dark py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6">
 
-      <h2 class="reveal font-inter font-black mb-5 section-h2-white">
-        応募・お問い合わせ
+      <h2 class="reveal font-inter font-black mb-5 text-center section-h2-white">
+        応募フォーム
       </h2>
-      <p class="reveal mb-10" style="font-weight: 400; font-size: 0.9375rem; color: rgba(255,255,255,0.7); line-height: 1.8; letter-spacing: 0.01em;">
-        ご興味のある方はお気軽にご連絡ください
+      <p class="reveal mb-12 text-center" style="font-weight: 400; font-size: 0.9375rem; color: rgba(255,255,255,0.7); line-height: 1.8; letter-spacing: 0.01em;">
+        ご興味のある方はお気軽にご応募ください
       </p>
-      <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/#contact" class="cta-button">
-          応募・お問い合わせ
-        </a>
-        <a href="/" style="display: inline-block; background: transparent; color: rgba(255,255,255,0.7); font-weight: 700; font-size: 0.9375rem; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: background 0.2s, border-color 0.2s, transform 0.18s;" onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.borderColor='rgba(255,255,255,0.4)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(255,255,255,0.2)'; this.style.transform='translateY(0)'">
-          トップに戻る
+
+      <form class="reveal" name="recruit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" style="display: grid; gap: 1.25rem; max-width: 640px; margin: 0 auto;">
+        <input type="hidden" name="form-name" value="recruit">
+        <p style="display: none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <!-- 応募職種 -->
+        <div>
+          <label style="display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; letter-spacing: 0.02em;">応募職種 <span style="color: #6366F1;">*</span></label>
+          <select name="position" id="positionSelect" required style="width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: #ffffff; font-size: 0.9375rem; outline: none; font-family: 'Noto Sans JP', sans-serif; transition: border-color 0.2s; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22rgba(255,255,255,0.5)%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+            <option value="" disabled selected>職種を選択してください</option>
+            <option value="セールス担当">セールス担当</option>
+            <option value="SNS運用担当">SNS運用担当</option>
+          </select>
+        </div>
+
+        <!-- 名前・メール 2col -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;" class="sm:grid-cols-2">
+          <div>
+            <label style="display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; letter-spacing: 0.02em;">お名前 <span style="color: #6366F1;">*</span></label>
+            <input type="text" name="name" required style="width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: #ffffff; font-size: 0.9375rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; letter-spacing: 0.02em;">メールアドレス <span style="color: #6366F1;">*</span></label>
+            <input type="email" name="email" required style="width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: #ffffff; font-size: 0.9375rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+          </div>
+        </div>
+
+        <!-- 自己PR・経験 -->
+        <div>
+          <label style="display: block; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; letter-spacing: 0.02em;">自己PR・経験</label>
+          <textarea name="message" rows="5" style="width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: #ffffff; font-size: 0.9375rem; outline: none; resize: vertical; transition: border-color 0.2s; font-family: 'Noto Sans JP', sans-serif;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"></textarea>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div style="text-align: center; margin-top: 0.5rem;">
+          <button type="submit" class="cta-button" style="cursor: pointer; border: none;">応募する</button>
+        </div>
+      </form>
+
+      <div class="reveal text-center" style="margin-top: 3rem;">
+        <a href="/" style="font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
+          ← トップに戻る
         </a>
       </div>
 
@@ -573,6 +615,29 @@
       });
 
     })();
+
+    // Auto-fill position from card button click
+    document.querySelectorAll('.apply-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pos = btn.getAttribute('data-position');
+        var sel = document.getElementById('positionSelect');
+        if (sel && pos) {
+          sel.value = pos;
+        }
+      });
+    });
+
+    // Double-submit prevention
+    var form = document.querySelector('form[data-netlify]');
+    if (form) {
+      form.addEventListener('submit', function () {
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = '送信中...';
+        }
+      });
+    }
   </script>
 
 </body>
