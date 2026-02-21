@@ -654,6 +654,136 @@
       color: #1F2937;
       line-height: 2.0;
     }
+
+    /* ============================================================
+       HOW WE WORK — BEFORE / AFTER (S4.5)
+       ============================================================ */
+    .cap-ba-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 960px;
+      margin: 3rem auto 0;
+    }
+    @media (min-width: 768px) {
+      .cap-ba-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .cap-ba-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .cap-ba-subtitle {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      line-height: 1.45;
+    }
+
+    .cap-ba-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      gap: 1rem;
+    }
+
+    .cap-ba-task {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    .cap-ba-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cap-ba-total {
+      padding-top: 1rem;
+      margin-top: 0.25rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cap-ba-total-text {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    .cap-ba-total-note {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-top: 0.25rem;
+    }
+
+    .cap-ba-task-strike {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      line-height: 1.8;
+    }
+
+    .cap-ba-agent {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8125rem;
+      color: #6366F1;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cap-ba-gain {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .cap-ba-gain-note {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      margin-top: 0.5rem;
+    }
+
+    .cap-ba-cost {
+      margin-top: 1.5rem;
+    }
+
+    .cap-ba-cost-text {
+      font-size: 0.9375rem;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    .cap-ba-cost-sub {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+    }
+
+    .cap-ba-closing {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 2.0;
+      max-width: 640px;
+      margin: 3rem auto 0;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -1721,6 +1851,105 @@
 
       <p class="reveal section-body-dark" style="margin-top: 2.5rem; max-width: 640px;">
         ホワイトカラーの仕事を分解すると、約4分の3はAIエージェントで遂行できる段階にあります。残り4分の1——商談、意思決定、チームビルディング、ブランド設計——は、人にしかできません。当社では、この比率で業務を回しています。
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       S4.5. Before / After
+       ===================================================================== -->
+  <section class="section-dark" style="padding: 5rem 1.5rem 7rem;">
+    <div style="max-width: 960px; margin: 0 auto;">
+
+      <h2 class="reveal font-inter font-black" style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.15; color: #ffffff; text-align: center; margin-bottom: 0.5rem;">
+        同じ社員。同じ8時間。使い方が違うだけ。
+      </h2>
+
+      <div class="cap-ba-grid">
+
+        <!-- Before -->
+        <div class="reveal">
+          <p class="cap-ba-label" style="color: rgba(255,255,255,0.4);">Before</p>
+          <p class="cap-ba-subtitle">一般的な企業</p>
+
+          <div class="cap-ba-row">
+            <span class="cap-ba-task">メール処理・返信</span>
+            <span class="cap-ba-time">1.5h</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task">日報・報告書の作成</span>
+            <span class="cap-ba-time">1h</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task">データ集計・レポート</span>
+            <span class="cap-ba-time">1h</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task">議事録の清書</span>
+            <span class="cap-ba-time">30min</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task">スケジュール調整</span>
+            <span class="cap-ba-time">30min</span>
+          </div>
+          <div class="cap-ba-row" style="border-bottom: none;">
+            <span class="cap-ba-task">提案資料の作成</span>
+            <span class="cap-ba-time">1.5h</span>
+          </div>
+
+          <div class="cap-ba-total">
+            <p class="cap-ba-total-text">作業合計 6時間 / 8時間</p>
+            <p class="cap-ba-total-note">商談・戦略・育成に使える時間は2時間だけ。</p>
+            <p class="cap-ba-total-cost" style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.6;">月給40万円の社員なら、<span style="color: rgba(255,255,255,0.8); font-weight: 700;">この作業に月30万円相当</span>の人件費。</p>
+          </div>
+        </div>
+
+        <!-- After -->
+        <div class="reveal">
+          <p class="cap-ba-label" style="color: #6366F1;">After</p>
+          <p class="cap-ba-subtitle">STANDXの場合</p>
+
+          <div class="cap-ba-row">
+            <span class="cap-ba-task-strike">メール処理・返信</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task-strike">日報・報告書の作成</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task-strike">データ集計・レポート</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task-strike">議事録の清書</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+          <div class="cap-ba-row">
+            <span class="cap-ba-task-strike">スケジュール調整</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+          <div class="cap-ba-row" style="border-bottom: none;">
+            <span class="cap-ba-task-strike">提案資料の作成</span>
+            <span class="cap-ba-agent">&rarr; Agent Division</span>
+          </div>
+
+          <div class="cap-ba-total">
+            <p class="cap-ba-gain grad-text">+6h</p>
+            <p class="cap-ba-gain-note">意味のある仕事に使える時間</p>
+            <div class="cap-ba-cost">
+              <p class="cap-ba-cost-text">月額コスト: 数万円</p>
+              <p class="cap-ba-cost-sub">（社員1人の月給の10分の1以下）</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="reveal cap-ba-closing">
+        いい人材でも、作業に埋もれる。仕組みが変われば、人が活きる。
       </p>
 
     </div>
