@@ -430,11 +430,12 @@
       left: 0;
       right: 0;
       z-index: 50;
-      padding: 0.875rem 1.5rem;
-      background: #ffffff;
       display: flex;
-      justify-content: center;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       -webkit-backface-visibility: hidden;
@@ -445,6 +446,104 @@
       width: clamp(120px, 12vw, 160px);
       height: auto;
       object-fit: contain;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .header-nav a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: #fff;
+    }
+
+    .header-scrolled {
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 60;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,15,0.97);
+      z-index: 55;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.is-open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
 
     /* ============================================================
@@ -995,11 +1094,34 @@
 <body>
 
   <!-- =====================================================================
-       HEADER — Logo top-left
+       HEADER — Logo top-left, Nav top-right
        ===================================================================== -->
   <header class="site-header">
     <a href="/"><img src="STANDX_logo_FIX.png" alt="STANDX" class="site-logo"></a>
+    <nav class="header-nav">
+      <a href="#agent-division">About</a>
+      <a href="#expert-division">Service</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#company">Company</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu">
+    <a href="#agent-division">About</a>
+    <a href="#expert-division">Service</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#company">Company</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <!-- =====================================================================
        HERO — Dark background with Unsplash image
@@ -1513,7 +1635,7 @@
   <!-- =====================================================================
        EXPERT DIVISION — Dark
        ===================================================================== -->
-  <section class="section-dark py-28 md:py-40 lg:py-52">
+  <section id="expert-division" class="section-dark py-28 md:py-40 lg:py-52">
     <div class="max-w-6xl mx-auto px-6">
 
       <div class="text-center mb-16 md:mb-24">
@@ -1590,7 +1712,7 @@
   <!-- =====================================================================
        CEO — White background
        ===================================================================== -->
-  <section class="section-white py-28 md:py-40 lg:py-48">
+  <section id="leadership" class="section-white py-28 md:py-40 lg:py-48">
     <div class="max-w-4xl mx-auto px-6">
 
       <h2 class="reveal font-inter font-black mb-16 md:mb-20 text-center section-h2-dark">
@@ -1622,9 +1744,27 @@
 
 
   <!-- =====================================================================
+       NEWS — Dark background
+       ===================================================================== -->
+  <section id="news" class="section-dark py-28 md:py-40 lg:py-48">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="reveal font-inter font-black mb-16 md:mb-20 text-center section-h2-white">News</h2>
+      <div class="reveal" style="max-width: 640px; margin: 0 auto;">
+        <!-- News item -->
+        <a href="#" style="display: flex; align-items: baseline; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+          <time style="font-family: 'Inter', sans-serif; font-size: 0.8125rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; white-space: nowrap;">2026.02.21</time>
+          <span style="display: inline-block; font-size: 0.6875rem; font-weight: 700; color: rgba(255,255,255,0.85); background: rgba(99,102,241,0.2); padding: 0.125rem 0.5rem; border-radius: 2px; letter-spacing: 0.05em; white-space: nowrap;">お知らせ</span>
+          <span style="font-size: 0.9375rem; color: rgba(255,255,255,0.85); line-height: 1.6;">ホームページをリニューアルしました</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
        COMPANY — #F5F5F7
        ===================================================================== -->
-  <section class="section-warm py-28 md:py-40 lg:py-52">
+  <section id="company" class="section-warm py-28 md:py-40 lg:py-52">
     <div class="max-w-6xl mx-auto px-6">
 
       <h2 class="reveal font-inter font-black mb-14 text-center company-h2">
@@ -1773,7 +1913,7 @@
     })();
 
     // Double-submit prevention
-    var form = document.querySelector('form[data-netlify]');
+    var form = document.querySelector('form[action*="web3forms"]');
     if (form) {
       form.addEventListener('submit', function () {
         var btn = form.querySelector('button[type="submit"]');
@@ -1783,6 +1923,49 @@
         }
       });
     }
+
+    // Header scroll effect
+    (function() {
+      var header = document.querySelector('.site-header');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 60) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      });
+
+      // Hamburger toggle
+      var hamburger = document.querySelector('.hamburger');
+      var mobileMenu = document.querySelector('.mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('is-active');
+          mobileMenu.classList.toggle('is-open');
+          document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('is-active');
+            mobileMenu.classList.remove('is-open');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            var headerHeight = header.offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
   </script>
 
 </body>
