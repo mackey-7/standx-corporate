@@ -1675,9 +1675,11 @@
       <p class="reveal mb-12 text-center contact-lead">
         お気軽にお問い合わせください
       </p>
-      <form class="reveal form-grid" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="form-honeypot"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <form class="reveal form-grid" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="80208ead-0118-4d4e-a7ef-5b36932708fb">
+        <input type="hidden" name="subject" value="stand-x.com お問い合わせ">
+        <input type="hidden" name="redirect" value="https://stand-x.com/thanks.html">
+        <input type="checkbox" name="botcheck" style="display: none;">
         <div class="form-inner">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
